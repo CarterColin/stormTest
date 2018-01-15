@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.suneee.dao.DeliversingleDOMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.suneee.model.DeliversingleDO" >
+    <id column="deliverno" property="deliverno" jdbcType="VARCHAR" />
+    <result column="deliver" property="deliver" jdbcType="VARCHAR" />
+    <result column="contactway" property="contactway" jdbcType="VARCHAR" />
+    <result column="destatictime" property="destatictime" jdbcType="TIMESTAMP" />
+    <result column="deendtime" property="deendtime" jdbcType="TIMESTAMP" />
+    <result column="delivercommodity" property="delivercommodity" jdbcType="VARCHAR" />
+    <result column="deliverarea" property="deliverarea" jdbcType="VARCHAR" />
+    <result column="deliverstatus" property="deliverstatus" jdbcType="VARCHAR" />
+    <result column="deliverid" property="deliverid" jdbcType="VARCHAR" />
+    <result column="withdrawmoney" property="withdrawmoney" jdbcType="NUMERIC" />
+    <result column="staffcode" property="staffcode" jdbcType="VARCHAR" />
+    <result column="settleaccountstime" property="settleaccountstime" jdbcType="TIMESTAMP" />
+    <result column="confirmtime" property="confirmtime" jdbcType="TIMESTAMP" />
+    <result column="waveid" property="waveid" jdbcType="VARCHAR" />
+    <result column="deliverticket" property="deliverticket" jdbcType="NUMERIC" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    deliverno, deliver, contactway, destatictime, deendtime, delivercommodity, deliverarea, 
+    deliverstatus, deliverid, withdrawmoney, staffcode, settleaccountstime, confirmtime, 
+    waveid, deliverticket
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sp_tr_deliversingle
+    where deliverno = #{deliverno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sp_tr_deliversingle
+    where deliverno = #{deliverno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.suneee.model.DeliversingleDO" >
+    insert into sp_tr_deliversingle (deliverno, deliver, contactway, 
+      destatictime, deendtime, delivercommodity, 
+      deliverarea, deliverstatus, deliverid, 
+      withdrawmoney, staffcode, settleaccountstime, 
+      confirmtime, waveid, deliverticket
+      )
+    values (#{deliverno,jdbcType=VARCHAR}, #{deliver,jdbcType=VARCHAR}, #{contactway,jdbcType=VARCHAR}, 
+      #{destatictime,jdbcType=TIMESTAMP}, #{deendtime,jdbcType=TIMESTAMP}, #{delivercommodity,jdbcType=VARCHAR}, 
+      #{deliverarea,jdbcType=VARCHAR}, #{deliverstatus,jdbcType=VARCHAR}, #{deliverid,jdbcType=VARCHAR}, 
+      #{withdrawmoney,jdbcType=NUMERIC}, #{staffcode,jdbcType=VARCHAR}, #{settleaccountstime,jdbcType=TIMESTAMP}, 
+      #{confirmtime,jdbcType=TIMESTAMP}, #{waveid,jdbcType=VARCHAR}, #{deliverticket,jdbcType=NUMERIC}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.suneee.model.DeliversingleDO" >
+    insert into sp_tr_deliversingle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="deliverno != null" >
+        deliverno,
+      </if>
+      <if test="deliver != null" >
+        deliver,
+      </if>
+      <if test="contactway != null" >
+        contactway,
+      </if>
+      <if test="destatictime != null" >
+        destatictime,
+      </if>
+      <if test="deendtime != null" >
+        deendtime,
+      </if>
+      <if test="delivercommodity != null" >
+        delivercommodity,
+      </if>
+      <if test="deliverarea != null" >
+        deliverarea,
+      </if>
+      <if test="deliverstatus != null" >
+        deliverstatus,
+      </if>
+      <if test="deliverid != null" >
+        deliverid,
+      </if>
+      <if test="withdrawmoney != null" >
+        withdrawmoney,
+      </if>
+      <if test="staffcode != null" >
+        staffcode,
+      </if>
+      <if test="settleaccountstime != null" >
+        settleaccountstime,
+      </if>
+      <if test="confirmtime != null" >
+        confirmtime,
+      </if>
+      <if test="waveid != null" >
+        waveid,
+      </if>
+      <if test="deliverticket != null" >
+        deliverticket,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="deliverno != null" >
+        #{deliverno,jdbcType=VARCHAR},
+      </if>
+      <if test="deliver != null" >
+        #{deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="contactway != null" >
+        #{contactway,jdbcType=VARCHAR},
+      </if>
+      <if test="destatictime != null" >
+        #{destatictime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deendtime != null" >
+        #{deendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delivercommodity != null" >
+        #{delivercommodity,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverarea != null" >
+        #{deliverarea,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverstatus != null" >
+        #{deliverstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverid != null" >
+        #{deliverid,jdbcType=VARCHAR},
+      </if>
+      <if test="withdrawmoney != null" >
+        #{withdrawmoney,jdbcType=NUMERIC},
+      </if>
+      <if test="staffcode != null" >
+        #{staffcode,jdbcType=VARCHAR},
+      </if>
+      <if test="settleaccountstime != null" >
+        #{settleaccountstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirmtime != null" >
+        #{confirmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="waveid != null" >
+        #{waveid,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverticket != null" >
+        #{deliverticket,jdbcType=NUMERIC},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.suneee.model.DeliversingleDO" >
+    update sp_tr_deliversingle
+    <set >
+      <if test="deliver != null" >
+        deliver = #{deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="contactway != null" >
+        contactway = #{contactway,jdbcType=VARCHAR},
+      </if>
+      <if test="destatictime != null" >
+        destatictime = #{destatictime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deendtime != null" >
+        deendtime = #{deendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delivercommodity != null" >
+        delivercommodity = #{delivercommodity,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverarea != null" >
+        deliverarea = #{deliverarea,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverstatus != null" >
+        deliverstatus = #{deliverstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverid != null" >
+        deliverid = #{deliverid,jdbcType=VARCHAR},
+      </if>
+      <if test="withdrawmoney != null" >
+        withdrawmoney = #{withdrawmoney,jdbcType=NUMERIC},
+      </if>
+      <if test="staffcode != null" >
+        staffcode = #{staffcode,jdbcType=VARCHAR},
+      </if>
+      <if test="settleaccountstime != null" >
+        settleaccountstime = #{settleaccountstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirmtime != null" >
+        confirmtime = #{confirmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="waveid != null" >
+        waveid = #{waveid,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverticket != null" >
+        deliverticket = #{deliverticket,jdbcType=NUMERIC},
+      </if>
+    </set>
+    where deliverno = #{deliverno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.suneee.model.DeliversingleDO" >
+    update sp_tr_deliversingle
+    set deliver = #{deliver,jdbcType=VARCHAR},
+      contactway = #{contactway,jdbcType=VARCHAR},
+      destatictime = #{destatictime,jdbcType=TIMESTAMP},
+      deendtime = #{deendtime,jdbcType=TIMESTAMP},
+      delivercommodity = #{delivercommodity,jdbcType=VARCHAR},
+      deliverarea = #{deliverarea,jdbcType=VARCHAR},
+      deliverstatus = #{deliverstatus,jdbcType=VARCHAR},
+      deliverid = #{deliverid,jdbcType=VARCHAR},
+      withdrawmoney = #{withdrawmoney,jdbcType=NUMERIC},
+      staffcode = #{staffcode,jdbcType=VARCHAR},
+      settleaccountstime = #{settleaccountstime,jdbcType=TIMESTAMP},
+      confirmtime = #{confirmtime,jdbcType=TIMESTAMP},
+      waveid = #{waveid,jdbcType=VARCHAR},
+      deliverticket = #{deliverticket,jdbcType=NUMERIC}
+    where deliverno = #{deliverno,jdbcType=VARCHAR}
+  </update>
+</mapper>
