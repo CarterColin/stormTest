@@ -50,5 +50,9 @@ public class Test {
         logger.debug("用户id为：{}的连接发送错误",this.userId);
         error.printStackTrace();
     }
-
+    
+    @OnError
+    public void onError1(){
+    	
+    }
 }
