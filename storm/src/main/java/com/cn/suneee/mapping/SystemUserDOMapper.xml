@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.suneee.dao.SystemUserDOMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.suneee.model.SystemUserDO" >
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="department_id" property="departmentId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="telphone" property="telphone" jdbcType="VARCHAR" />
+    <result column="valid" property="valid" jdbcType="INTEGER" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_ip" property="lastLoginIp" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="corp_id" property="corpId" jdbcType="INTEGER" />
+    <result column="dept_id" property="deptId" jdbcType="INTEGER" />
+    <result column="operpassword" property="operpassword" jdbcType="VARCHAR" />
+    <result column="strmd5" property="strmd5" jdbcType="VARCHAR" />
+    <result column="e_mail" property="eMail" jdbcType="VARCHAR" />
+    <result column="failure_num" property="failureNum" jdbcType="INTEGER" />
+    <result column="last_failure_time" property="lastFailureTime" jdbcType="DATE" />
+    <result column="pw_update_time" property="pwUpdateTime" jdbcType="DATE" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="nick" property="nick" jdbcType="VARCHAR" />
+    <result column="acc_from" property="accFrom" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="employee_id" property="employeeId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="employeeid" property="employeeid" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <insert id="insert" parameterType="com.cn.suneee.model.SystemUserDO" >
+    insert into system_user_info_t (account, department_id, user_name, 
+      password, sex, position, 
+      address, telphone, valid, 
+      last_login_time, last_login_ip, memo, 
+      delete_flag, create_time, update_time, 
+      corp_id, dept_id, operpassword, 
+      strmd5, e_mail, failure_num, 
+      last_failure_time, pw_update_time, id_card, 
+      nick, acc_from, name, 
+      employee_id, user_id, employeeid
+      )
+    values (#{account,jdbcType=VARCHAR}, #{departmentId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, #{valid,jdbcType=INTEGER}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{lastLoginIp,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{deleteFlag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{corpId,jdbcType=INTEGER}, #{deptId,jdbcType=INTEGER}, #{operpassword,jdbcType=VARCHAR}, 
+      #{strmd5,jdbcType=VARCHAR}, #{eMail,jdbcType=VARCHAR}, #{failureNum,jdbcType=INTEGER}, 
+      #{lastFailureTime,jdbcType=DATE}, #{pwUpdateTime,jdbcType=DATE}, #{idCard,jdbcType=VARCHAR}, 
+      #{nick,jdbcType=VARCHAR}, #{accFrom,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{employeeId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{employeeid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.suneee.model.SystemUserDO" >
+    insert into system_user_info_t
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="account != null" >
+        account,
+      </if>
+      <if test="departmentId != null" >
+        department_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="telphone != null" >
+        telphone,
+      </if>
+      <if test="valid != null" >
+        valid,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="corpId != null" >
+        corp_id,
+      </if>
+      <if test="deptId != null" >
+        dept_id,
+      </if>
+      <if test="operpassword != null" >
+        operpassword,
+      </if>
+      <if test="strmd5 != null" >
+        strmd5,
+      </if>
+      <if test="eMail != null" >
+        e_mail,
+      </if>
+      <if test="failureNum != null" >
+        failure_num,
+      </if>
+      <if test="lastFailureTime != null" >
+        last_failure_time,
+      </if>
+      <if test="pwUpdateTime != null" >
+        pw_update_time,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="nick != null" >
+        nick,
+      </if>
+      <if test="accFrom != null" >
+        acc_from,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="employeeId != null" >
+        employee_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="employeeid != null" >
+        employeeid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        #{valid,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corpId != null" >
+        #{corpId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="operpassword != null" >
+        #{operpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="strmd5 != null" >
+        #{strmd5,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="failureNum != null" >
+        #{failureNum,jdbcType=INTEGER},
+      </if>
+      <if test="lastFailureTime != null" >
+        #{lastFailureTime,jdbcType=DATE},
+      </if>
+      <if test="pwUpdateTime != null" >
+        #{pwUpdateTime,jdbcType=DATE},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="nick != null" >
+        #{nick,jdbcType=VARCHAR},
+      </if>
+      <if test="accFrom != null" >
+        #{accFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null" >
+        #{employeeId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="employeeid != null" >
+        #{employeeid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  
+  <select id="selectSystemUserDO" resultMap="BaseResultMap" parameterType="java.util.Map">
+  		SELECT * FROM system_user_info_t where user_name=#{user_name};
+  </select>
+</mapper>
