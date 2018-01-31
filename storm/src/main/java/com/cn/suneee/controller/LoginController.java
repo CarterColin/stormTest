@@ -1,6 +1,7 @@
 package com.cn.suneee.controller;
 
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -30,8 +31,13 @@ public class LoginController {
 		if(name == null && password == null) return "login";
 		Map map = systemUserService.User(name);
 		if(name.equals(map.get("name")) && password.equals(map.get("password"))){
+			String token = UUID.randomUUID().toString();
+			session.setAttribute("login", true);
+			session.setAttribute("token", token);
 			return "showUser";
 		}else{
+			model.addAttribute("error", true);
+			model.addAttribute("message", "用户名或密码错误。");
 			return "login";
 		}
 	}
