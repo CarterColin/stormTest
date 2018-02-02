@@ -19,13 +19,14 @@ public class DeliversingleController {
 	@RequestMapping("/showUser1")
 	public String showUser1(){
 		System.out.println("ok==============ok");
-		return "showUser";
+		return "flash";
 	}
 	
 			
 	@RequestMapping(value = { "/getDeliverCarPage" }, method = RequestMethod.GET,produces="text/html;charset=utf-8")
 	public String getDeliverCarPage(String message1){
 		System.out.println("ok==============ok"+message1);
-		return "showUser";
+//		return "showUser";
+		return "flash";
 	}
 }

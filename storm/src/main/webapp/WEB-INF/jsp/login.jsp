@@ -8,50 +8,58 @@
 <html>
 <head>
 <title>登录</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<style type="text/css">
-body {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	overflow: hidden;
-}
-</style>
-<script src="${ctx}/scripts/boot.js" type="text/javascript"></script>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  	<meta name="author" content="Vincent Garreau" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" media="screen" href="${ctx}/css/style.css">
+	
+	<script src="${ctx}/scripts/boot.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="loginWindow" class="mini-window" title="用户登录"
-		style="width: 350px; height: 200px;" showModal="true"
-		showCloseButton="false">
-		<form id="mainForm" method="post" action="${ctx}/user/login">
-			<div id="loginForm" style="padding: 15px; padding-top: 10px;">
-				<table>
-					<tr>
-						<td style="width: 60px;"><label for="name$text">帐号：</label></td>
-						<td><input id="name" name="name"
-							onvalidation="onUserNameValidation" class="mini-textbox"
-							required="true" requiredErrorText="账号不能为空" style="width: 150px;" /></td>
-					</tr>
-					<tr>
-						<td style="width: 60px;"><label for="password$text">密码：</label></td>
-						<td><input id="password" name="password" onvalidation="onPwdValidation"
-							class="mini-password" requiredErrorText="密码不能为空" required="true"
-							style="width: 150px;" onenter="onLoginClick" /> &nbsp;&nbsp;<a
-							href="#">忘记密码?</a></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td style="padding-top: 5px;"><a onclick="onLoginClick"
-							class="mini-button" style="width: 60px;">登录</a> <a
-							onclick="onResetClick" class="mini-button" style="width: 60px;">重置</a>
-						</td>
-					</tr>
-				</table>
-				<label id="loginMessage"></label>
-			</div>
-		</form>
+	
+	<!-- particles.js container -->
+	<div id="particles-js">
+		<div id="loginWindow" class="mini-window" title="用户登录"
+			style="width: 350px; height: 200px;" showModal="true"
+			showCloseButton="false">
+			<form id="mainForm" method="post" action="${ctx}/user/login">
+				<div id="loginForm" style="padding: 15px; padding-top: 10px;">
+					<table>
+						<tr>
+							<td style="width: 60px;"><label for="name$text">帐号：</label></td>
+							<td><input id="name" name="name"
+								onvalidation="onUserNameValidation" class="mini-textbox"
+								required="true" requiredErrorText="账号不能为空" style="width: 150px;" /></td>
+						</tr>
+						<tr>
+							<td style="width: 60px;"><label for="password$text">密码：</label></td>
+							<td><input id="password" name="password" onvalidation="onPwdValidation"
+								class="mini-password" requiredErrorText="密码不能为空" required="true"
+								style="width: 150px;" onenter="onLoginClick" /> &nbsp;&nbsp;<a
+								href="#">忘记密码?</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td style="padding-top: 5px;"><a onclick="onLoginClick"
+								class="mini-button" style="width: 60px;">登录</a> <a
+								onclick="onResetClick" class="mini-button" style="width: 60px;">重置</a>
+							</td>
+						</tr>
+					</table>
+					<label id="loginMessage"></label>
+				</div>
+			</form>
+		</div>
 	</div>
 
+	<!-- scripts -->
+	<script src="${ctx}/scripts/js/particles.js"></script>
+	<script src="${ctx}/scripts/js/app.js"></script>
+	
+	<!-- stats.js -->
+	<script src="${ctx}/scripts/js/stats.js"></script>
+	
 	<script type="text/javascript">
 		if('${error}' == 'true') {
 			$('#loginMessage').text('${message}');
