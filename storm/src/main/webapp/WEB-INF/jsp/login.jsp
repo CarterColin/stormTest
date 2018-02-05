@@ -69,7 +69,7 @@
 		}
 	
         mini.parse();
-
+		debugger;
         var loginWindow = mini.get("loginWindow");
         loginWindow.show();
 

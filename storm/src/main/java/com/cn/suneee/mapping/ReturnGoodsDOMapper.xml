@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.suneee.dao.ReturnGoodsDOMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.suneee.model.ReturnGoodsDO" >
+    <id column="returngoodsid" property="returngoodsid" jdbcType="VARCHAR" />
+    <result column="returngoodscode" property="returngoodscode" jdbcType="VARCHAR" />
+    <result column="enteroddnumber" property="enteroddnumber" jdbcType="VARCHAR" />
+    <result column="receivingcontactr" property="receivingcontactr" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="deliveryclerk" property="deliveryclerk" jdbcType="VARCHAR" />
+    <result column="returngoodstatus" property="returngoodstatus" jdbcType="VARCHAR" />
+    <result column="returngoodstime" property="returngoodstime" jdbcType="TIMESTAMP" />
+    <result column="deliverytelephone" property="deliverytelephone" jdbcType="VARCHAR" />
+    <result column="deliveryid" property="deliveryid" jdbcType="VARCHAR" />
+    <result column="ordernumber" property="ordernumber" jdbcType="VARCHAR" />
+    <result column="storeordernumber" property="storeordernumber" jdbcType="VARCHAR" />
+    <result column="orderenddate" property="orderenddate" jdbcType="TIMESTAMP" />
+    <result column="orderstartdate" property="orderstartdate" jdbcType="TIMESTAMP" />
+    <result column="completetime" property="completetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    returngoodsid, returngoodscode, enteroddnumber, receivingcontactr, telephone, address, 
+    deliveryclerk, returngoodstatus, returngoodstime, deliverytelephone, deliveryid, 
+    ordernumber, storeordernumber, orderenddate, orderstartdate, completetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sp_tr_return_goods
+    where returngoodsid = #{returngoodsid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sp_tr_return_goods
+    where returngoodsid = #{returngoodsid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.suneee.model.ReturnGoodsDO" >
+    insert into sp_tr_return_goods (returngoodsid, returngoodscode, enteroddnumber, 
+      receivingcontactr, telephone, address, 
+      deliveryclerk, returngoodstatus, returngoodstime, 
+      deliverytelephone, deliveryid, ordernumber, 
+      storeordernumber, orderenddate, orderstartdate, 
+      completetime)
+    values (#{returngoodsid,jdbcType=VARCHAR}, #{returngoodscode,jdbcType=VARCHAR}, #{enteroddnumber,jdbcType=VARCHAR}, 
+      #{receivingcontactr,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{deliveryclerk,jdbcType=VARCHAR}, #{returngoodstatus,jdbcType=VARCHAR}, #{returngoodstime,jdbcType=TIMESTAMP}, 
+      #{deliverytelephone,jdbcType=VARCHAR}, #{deliveryid,jdbcType=VARCHAR}, #{ordernumber,jdbcType=VARCHAR}, 
+      #{storeordernumber,jdbcType=VARCHAR}, #{orderenddate,jdbcType=TIMESTAMP}, #{orderstartdate,jdbcType=TIMESTAMP}, 
+      #{completetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.suneee.model.ReturnGoodsDO" >
+    insert into sp_tr_return_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="returngoodsid != null" >
+        returngoodsid,
+      </if>
+      <if test="returngoodscode != null" >
+        returngoodscode,
+      </if>
+      <if test="enteroddnumber != null" >
+        enteroddnumber,
+      </if>
+      <if test="receivingcontactr != null" >
+        receivingcontactr,
+      </if>
+      <if test="telephone != null" >
+        telephone,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="deliveryclerk != null" >
+        deliveryclerk,
+      </if>
+      <if test="returngoodstatus != null" >
+        returngoodstatus,
+      </if>
+      <if test="returngoodstime != null" >
+        returngoodstime,
+      </if>
+      <if test="deliverytelephone != null" >
+        deliverytelephone,
+      </if>
+      <if test="deliveryid != null" >
+        deliveryid,
+      </if>
+      <if test="ordernumber != null" >
+        ordernumber,
+      </if>
+      <if test="storeordernumber != null" >
+        storeordernumber,
+      </if>
+      <if test="orderenddate != null" >
+        orderenddate,
+      </if>
+      <if test="orderstartdate != null" >
+        orderstartdate,
+      </if>
+      <if test="completetime != null" >
+        completetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="returngoodsid != null" >
+        #{returngoodsid,jdbcType=VARCHAR},
+      </if>
+      <if test="returngoodscode != null" >
+        #{returngoodscode,jdbcType=VARCHAR},
+      </if>
+      <if test="enteroddnumber != null" >
+        #{enteroddnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="receivingcontactr != null" >
+        #{receivingcontactr,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryclerk != null" >
+        #{deliveryclerk,jdbcType=VARCHAR},
+      </if>
+      <if test="returngoodstatus != null" >
+        #{returngoodstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="returngoodstime != null" >
+        #{returngoodstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliverytelephone != null" >
+        #{deliverytelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryid != null" >
+        #{deliveryid,jdbcType=VARCHAR},
+      </if>
+      <if test="ordernumber != null" >
+        #{ordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="storeordernumber != null" >
+        #{storeordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderenddate != null" >
+        #{orderenddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderstartdate != null" >
+        #{orderstartdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="completetime != null" >
+        #{completetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.suneee.model.ReturnGoodsDO" >
+    update sp_tr_return_goods
+    <set >
+      <if test="returngoodscode != null" >
+        returngoodscode = #{returngoodscode,jdbcType=VARCHAR},
+      </if>
+      <if test="enteroddnumber != null" >
+        enteroddnumber = #{enteroddnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="receivingcontactr != null" >
+        receivingcontactr = #{receivingcontactr,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryclerk != null" >
+        deliveryclerk = #{deliveryclerk,jdbcType=VARCHAR},
+      </if>
+      <if test="returngoodstatus != null" >
+        returngoodstatus = #{returngoodstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="returngoodstime != null" >
+        returngoodstime = #{returngoodstime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliverytelephone != null" >
+        deliverytelephone = #{deliverytelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryid != null" >
+        deliveryid = #{deliveryid,jdbcType=VARCHAR},
+      </if>
+      <if test="ordernumber != null" >
+        ordernumber = #{ordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="storeordernumber != null" >
+        storeordernumber = #{storeordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderenddate != null" >
+        orderenddate = #{orderenddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderstartdate != null" >
+        orderstartdate = #{orderstartdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="completetime != null" >
+        completetime = #{completetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where returngoodsid = #{returngoodsid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.suneee.model.ReturnGoodsDO" >
+    update sp_tr_return_goods
+    set returngoodscode = #{returngoodscode,jdbcType=VARCHAR},
+      enteroddnumber = #{enteroddnumber,jdbcType=VARCHAR},
+      receivingcontactr = #{receivingcontactr,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      deliveryclerk = #{deliveryclerk,jdbcType=VARCHAR},
+      returngoodstatus = #{returngoodstatus,jdbcType=VARCHAR},
+      returngoodstime = #{returngoodstime,jdbcType=TIMESTAMP},
+      deliverytelephone = #{deliverytelephone,jdbcType=VARCHAR},
+      deliveryid = #{deliveryid,jdbcType=VARCHAR},
+      ordernumber = #{ordernumber,jdbcType=VARCHAR},
+      storeordernumber = #{storeordernumber,jdbcType=VARCHAR},
+      orderenddate = #{orderenddate,jdbcType=TIMESTAMP},
+      orderstartdate = #{orderstartdate,jdbcType=TIMESTAMP},
+      completetime = #{completetime,jdbcType=TIMESTAMP}
+    where returngoodsid = #{returngoodsid,jdbcType=VARCHAR}
+  </update>
+</mapper>

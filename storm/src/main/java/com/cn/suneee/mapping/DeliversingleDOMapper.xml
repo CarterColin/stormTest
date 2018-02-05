@@ -17,6 +17,7 @@
     <result column="confirmtime" property="confirmtime" jdbcType="TIMESTAMP" />
     <result column="waveid" property="waveid" jdbcType="VARCHAR" />
     <result column="deliverticket" property="deliverticket" jdbcType="NUMERIC" />
+
   </resultMap>
   <sql id="Base_Column_List" >
     deliverno, deliver, contactway, destatictime, deendtime, delivercommodity, deliverarea, 
